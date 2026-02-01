@@ -6,7 +6,7 @@ BLACKLIST_TAGS = {"script", "style", "code", "pre", "noscript", "head", "meta", 
 
 def fetch_html(url: str) -> str:
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
+        browser = p.chromium.launch(headless=True, args=["--no-sandbox"])
         # Use a generic user agent to avoid blocking
         context = browser.new_context(
             user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"

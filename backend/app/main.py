@@ -17,7 +17,7 @@ app = FastAPI(title="Translator Backend")
 # Enable CORS so your frontend can talk to this
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"], # Update with your frontend URL
+    allow_origins=["http://localhost:3000", "https://language-vercel.vercel.app/", "https://shittypagetranslater.com/"], # Update with your frontend URL
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
